@@ -65,14 +65,14 @@ function App() {
     );
   }
 
-  const result = filteredData(products, selectedCategory, query);
+  const results = filteredData(products, selectedCategory, query);
 
   return (
     <>
       <Sidebar handleChange={handleChange} />
-      <Navigation />
-      <Recommended />
-      <Products />
+      <Navigation query={query} handleInputChange={handleChange} />
+      <Recommended handleClick={handleClick} />
+      <Products results={results} />
     </>
   );
 }

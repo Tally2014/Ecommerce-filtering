@@ -1,4 +1,3 @@
-import { AiFillStar } from "react-icons/ai";
 import { BsFillBagHeartFill } from "react-icons/bs";
 
 export default function Card({
@@ -16,10 +15,7 @@ export default function Card({
         <div className="card-details">
           <h3 className="card-title">{title}</h3>
           <section className="card-reviews">
-            <AiFillStar className="rating-star" />
-            <AiFillStar className="rating-star" />
-            <AiFillStar className="rating-star" />
-            <AiFillStar className="rating-star" />
+            {star} {star} {star} {star}
             <span className="total-reviews">{reviews}</span>
           </section>
           <section className="card-price">
