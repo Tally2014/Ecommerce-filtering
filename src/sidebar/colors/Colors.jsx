@@ -4,35 +4,35 @@ import Input from "../../components/Input";
 export default function Colors({ handleChange }) {
   return (
     <>
-      <div className="ml">
+      <div>
         <h2 className="sidebar-title price-title">Colors</h2>
-        <label onChange={handleChange} className="sidebar-label-container">
-          <input type="radio" name="colors" />
+        <label className="sidebar-label-container">
+          <input onChange={handleChange} type="radio" name="colors" value="" />
           <span className="checkmark all"></span>All
         </label>
         <Input
-          onChange={handleChange}
+          handleChange={handleChange}
           value="black"
           title="Black"
           name="colors"
           color="black"
         />
         <Input
-          onChange={handleChange}
+          handleChange={handleChange}
           value="blue"
           title="Blue"
           name="colors"
           color="blue"
         />
         <Input
-          onChange={handleChange}
+          handleChange={handleChange}
           value="red"
           title="Red"
           name="colors"
           color="red"
         />
         <Input
-          onChange={handleChange}
+          handleChange={handleChange}
           value="green"
           title="Green"
           name="colors"
