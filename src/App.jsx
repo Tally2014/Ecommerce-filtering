@@ -21,8 +21,6 @@ function App() {
     (p) => p.title.toLocaleLowerCase().indexOf(query.toLocaleLowerCase()) !== -1
   );
 
-  console.log(filteredItems);
-
   // ----------- Radio Filtering -----------
   const handleChange = (e) => {
     setSelectedCategory(e.target.value);
@@ -67,11 +65,11 @@ function App() {
     );
   }
 
-  //const result =filteredData(products, selectedCategory, query);
+  const result = filteredData(products, selectedCategory, query);
 
   return (
     <>
-      <Sidebar />
+      <Sidebar handleChange={handleChange} />
       <Navigation />
       <Recommended />
       <Products />
