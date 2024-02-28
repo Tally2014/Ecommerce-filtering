@@ -22,6 +22,11 @@ function App() {
 
   console.log(filteredItems);
 
+  // ----------- Radio Filtering -----------
+  const handleChange = (e) => {
+    setSelectedCategory(e.target.value);
+  };
+
   return (
     <>
       <Sidebar />
