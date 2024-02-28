@@ -1,4 +1,5 @@
 import "./Colors.css";
+import Input from "../../components/Input";
 
 export default function Colors() {
   return (
@@ -9,26 +10,14 @@ export default function Colors() {
           <input type="radio" name="test3" />
           <span className="checkmark"></span>All
         </label>
-        <label className="sidebar-label-container">
-          <input type="radio" name="test3" />
-          <span className="checkmark"></span>black
-        </label>
-        <label className="sidebar-label-container">
-          <input type="radio" name="test3" />
-          <span className="checkmark"></span>blue
-        </label>
-        <label className="sidebar-label-container">
-          <input type="radio" name="test3" />
-          <span className="checkmark"></span>red
-        </label>
-        <label className="sidebar-label-container">
-          <input type="radio" name="test3" />
-          <span className="checkmark"></span> green
-        </label>
-        <label className="sidebar-label-container">
-          <input type="radio" name="test3" />
-          <span className="checkmark"></span> white
-        </label>
+        <Input />
+        <Input />
+        <Input />
+        <Input />
+        <Input />
+        <Input />
+        <Input />
+        <Input />
       </div>
     </>
   );
