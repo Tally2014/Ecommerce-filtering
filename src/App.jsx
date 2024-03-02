@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Navigation from "./navigation/Nav";
 import Products from "./products/Products";
@@ -7,9 +7,11 @@ import Sidebar from "./sidebar/Sidebar";
 import products from "./db/data";
 import Card from "./components/Card";
 
+export const RandContex = React.createContext(null);
+
 function App() {
   const [selectedCategory, setSelectedCategory] = useState(null);
-
+  const [dollarToRand, setDollarToRand] = useState(19.06);
   //Input Filter
   const [query, setQuery] = useState("");
 
@@ -69,10 +71,12 @@ function App() {
 
   return (
     <>
-      <Sidebar handleChange={handleChange} />
-      <Navigation query={query} handleInputChange={handleChange} />
-      <Recommended handleClick={handleClick} />
-      <Products results={results} />
+      <RandContex.Provider value={[dollarToRand]}>
+        <Sidebar handleChange={handleChange} />
+        <Navigation query={query} handleInputChange={handleChange} />
+        <Recommended handleClick={handleClick} />
+        <Products results={results} />
+      </RandContex.Provider>
     </>
   );
 }
