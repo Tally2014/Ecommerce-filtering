@@ -1,16 +1,26 @@
 import "./Recommended.css";
 
-export default function Recommended() {
+export default function Recommended({ handleClick }) {
   return (
     <>
       <div>
         <h2 className="recommended-title">Recommended</h2>
         <div className="recommended-flex">
-          <button className="btns">All Products</button>
-          <button className="btns">Nike</button>
-          <button className="btns">Adidas</button>
-          <button className="btns">Puma</button>
-          <button className="btns">Vans</button>
+          <button onClickHandler={handleClick} className="btns">
+            All Products
+          </button>
+          <button onClickHandler={handleClick} className="btns">
+            Nike
+          </button>
+          <button onClickHandler={handleClick} className="btns">
+            Adidas
+          </button>
+          <button onClickHandler={handleClick} className="btns">
+            Puma
+          </button>
+          <button onClickHandler={handleClick} className="btns">
+            Vans
+          </button>
         </div>
       </div>
     </>
