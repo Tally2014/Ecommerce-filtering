@@ -1,4 +1,6 @@
 import { BsFillBagHeartFill } from "react-icons/bs";
+import { RandContex } from "../App";
+import { useContext, useState } from "react";
 
 export default function Card({
   img,
@@ -8,6 +10,23 @@ export default function Card({
   prevPrice,
   newPrice,
 }) {
+  const [randValue] = useContext(RandContex);
+
+  function InRands(dollar) {
+    if (dollar.includes("$")) {
+      return Math.floor(convertToDouble(dollar) * randValue);
+    }
+    return Math.floor(parseFloat(dollar) * randValue);
+  }
+
+  function convertToDouble(str) {
+    // Remove the dollar sign and parse the string to a floating point number
+    const number = parseFloat(str.replace("$", ""));
+    // Round the number to two decimal places
+    const roundedNumber = Math.round(number * 100) / 100;
+    return roundedNumber;
+  }
+
   return (
     <>
       <section className="card">
@@ -20,7 +39,7 @@ export default function Card({
           </section>
           <section className="card-price">
             <div className="price">
-              <del>{prevPrice}</del> {newPrice}
+              <del>{`R${InRands(prevPrice)}`}</del> {InRands(newPrice)}
             </div>
 
             <div className="bag">
