@@ -1,4 +1,5 @@
 import "./Recommended.css";
+import Button from "../components/Button";
 
 export default function Recommended({ handleClick }) {
   return (
@@ -6,21 +7,11 @@ export default function Recommended({ handleClick }) {
       <div>
         <h2 className="recommended-title">Recommended</h2>
         <div className="recommended-flex">
-          <button onClickHandler={handleClick} className="btns">
-            All Products
-          </button>
-          <button onClickHandler={handleClick} className="btns">
-            Nike
-          </button>
-          <button onClickHandler={handleClick} className="btns">
-            Adidas
-          </button>
-          <button onClickHandler={handleClick} className="btns">
-            Puma
-          </button>
-          <button onClickHandler={handleClick} className="btns">
-            Vans
-          </button>
+          <Button onClickHandler={handleClick} value="" title="All Products" />
+          <Button onClickHandler={handleClick} value="Nike" title="Nike" />
+          <Button onClickHandler={handleClick} value="Adidas" title="Adidas" />
+          <Button onClickHandler={handleClick} value="Puma" title="Puma" />
+          <Button onClickHandler={handleClick} value="Vans" title="Vans" />
         </div>
       </div>
     </>
